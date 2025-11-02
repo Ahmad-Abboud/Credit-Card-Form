@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credit Card Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      
+      .form-wrapper {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        max-width: 500px;
+        width: 100%;
+      }
+      
+      .form-title {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+      }
+      
+      .form-title h1 {
+        margin: 0;
+        font-size: 28px;
+      }
+      
+      .form-title p {
+        margin: 10px 0 0 0;
+        color: #666;
+        font-size: 14px;
+      }
+      
+      .open-card-btn {
+        width: 100%;
+        background: #667eea;
+        color: white;
+        border: none;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background 0.3s;
+      }
+      
+      .open-card-btn:hover {
+        background: #5568d3;
+      }
+      
+      .status-indicator {
+        text-align: center;
+        margin-top: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+      
+      .status-indicator.connected {
+        background: #d4edda;
+        color: #155724;
+      }
+      
+      .status-indicator.disconnected {
+        background: #f8d7da;
+        color: #721c24;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="form-wrapper">
+      <div class="form-title">
+        <h1>Credit Card Information</h1>
+        <p>Enter your card details below</p>
+      </div>
+      
+      <div class="form-container">
+        <div class="field-container">
+          <label for="name">Name</label>
+          <input id="name" maxlength="20" type="text" />
+        </div>
+        <div class="field-container">
+          <label for="cardnumber">Card Number</label>
+          <span id="generatecard">generate random</span>
+          <input
+            id="cardnumber"
+            type="text"
+            pattern="[0-9]*"
+            inputmode="numeric"
+          />
+          <svg
+            id="ccicon"
+            class="ccicon"
+            width="750"
+            height="471"
+            viewBox="0 0 750 471"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          ></svg>
+        </div>
+        <div class="field-container">
+          <label for="expirationdate">Expiration (mm/yy)</label>
+          <input
+            id="expirationdate"
+            type="text"
+            pattern="[0-9]*"
+            inputmode="numeric"
+          />
+        </div>
+        <div class="field-container">
+          <label for="securitycode">Security Code</label>
+          <input
+            id="securitycode"
+            type="text"
+            pattern="[0-9]*"
+            inputmode="numeric"
+          />
+        </div>
+      </div>
+      
+      <button class="open-card-btn" id="openCardBtn">
+        Open Card View
+      </button>
+      
+      <div class="status-indicator disconnected" id="statusIndicator">
+        Card view not open
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
+    <script src="./form.js"></script>
+  </body>
+</html>
+
