@@ -8,6 +8,7 @@ window.onload = function () {
   }, 100);
 
   const name = document.getElementById('name');
+  const email = document.getElementById('email');
   const cardnumber = document.getElementById('cardnumber');
   const expirationdate = document.getElementById('expirationdate');
   const securitycode = document.getElementById('securitycode');
@@ -236,5 +237,68 @@ window.onload = function () {
       cardWindow = null;
     }
   }, 1000);
+
+  // Save to Excel functionality
+  const saveExcelBtn = document.getElementById('saveExcelBtn');
+
+  saveExcelBtn.addEventListener('click', async function() {
+    // Get current form data
+    const formData = {
+      Name: name.value || 'JOHN DOE',
+      Email: email.value || '',
+      CardNumber: cardnumber_mask.value || '0123 4567 8910 1112',
+      ExpirationDate: expirationdate_mask.value || '01/23',
+      SecurityCode: securitycode_mask.value || '985'
+    };
+
+    // Check if email is provided
+    if (!email.value) {
+      alert('Please enter an email address before saving.');
+      email.focus();
+      return;
+    }
+
+    // Disable button while saving
+    saveExcelBtn.disabled = true;
+    saveExcelBtn.textContent = 'Saving...';
+
+    try {
+      // Send data to server
+      const response = await fetch('http://localhost:3000/api/save-card-data', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert(`Data saved successfully! Total entries: ${result.totalEntries}`);
+
+        // Clear form after successful save
+        name.value = '';
+        email.value = '';
+        cardnumber.value = '';
+        expirationdate.value = '';
+        securitycode.value = '';
+
+        // Reset masks
+        cardnumber_mask.value = '';
+        expirationdate_mask.value = '';
+        securitycode_mask.value = '';
+      } else {
+        alert('Error: ' + result.message);
+      }
+    } catch (error) {
+      console.error('Error saving data:', error);
+      alert('Failed to save data. Make sure the server is running.\n\nTo start the server, run: npm install && npm start');
+    } finally {
+      // Re-enable button
+      saveExcelBtn.disabled = false;
+      saveExcelBtn.textContent = 'Save to Excel';
+    }
+  });
 };
 

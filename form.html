@@ -58,7 +58,25 @@
       .open-card-btn:hover {
         background: #5568d3;
       }
-      
+
+      .save-excel-btn {
+        width: 100%;
+        background: #10b981;
+        color: white;
+        border: none;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background 0.3s;
+      }
+
+      .save-excel-btn:hover {
+        background: #059669;
+      }
+
       .status-indicator {
         text-align: center;
         margin-top: 15px;
@@ -90,6 +108,10 @@
         <div class="field-container">
           <label for="name">Name</label>
           <input id="name" maxlength="20" type="text" />
+        </div>
+        <div class="field-container">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="example@email.com" />
         </div>
         <div class="field-container">
           <label for="cardnumber">Card Number</label>
@@ -134,7 +156,11 @@
       <button class="open-card-btn" id="openCardBtn">
         Open Card View
       </button>
-      
+
+      <button class="save-excel-btn" id="saveExcelBtn">
+        Save to Excel
+      </button>
+
       <div class="status-indicator disconnected" id="statusIndicator">
         Card view not open
       </div>

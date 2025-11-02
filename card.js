@@ -57,6 +57,14 @@ window.onload = function () {
     });
   }
 
+  // Helper function to add pulse animation
+  function addPulseAnimation(element) {
+    element.classList.add('updated');
+    setTimeout(function() {
+      element.classList.remove('updated');
+    }, 500);
+  }
+
   // Listen for messages from the form
   cardChannel.addEventListener('message', function(event) {
     const data = event.data;
@@ -64,8 +72,11 @@ window.onload = function () {
     if (data.type === 'name') {
       svgname.innerHTML = data.value;
       svgnameback.innerHTML = data.value;
+      addPulseAnimation(svgname);
+      addPulseAnimation(svgnameback);
     } else if (data.type === 'cardnumber') {
       svgnumber.innerHTML = data.value;
+      addPulseAnimation(svgnumber);
 
       // Update card type and colors
       const cardtype = data.cardtype;
@@ -90,8 +101,10 @@ window.onload = function () {
       }
     } else if (data.type === 'expiration') {
       svgexpire.innerHTML = data.value;
+      addPulseAnimation(svgexpire);
     } else if (data.type === 'security') {
       svgsecurity.innerHTML = data.value;
+      addPulseAnimation(svgsecurity);
     }
   });
 
