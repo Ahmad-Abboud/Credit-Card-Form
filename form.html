@@ -12,7 +12,22 @@
         align-items: center;
         justify-content: center;
         min-height: 100vh;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(70deg, #FFFFFF 0%, #22b072 75%);
+      }
+      
+      /* Logo in the form header */
+      .form-logo {
+        display: block;
+        margin: 0 auto 12px auto;
+        max-width: 220px; /* increased size */
+        height: auto;
+      }
+      
+      /* Keep the logo responsive on small screens */
+      @media (max-width: 480px) {
+        .form-logo {
+          max-width: 140px;
+        }
       }
       
       .form-wrapper {
@@ -43,7 +58,7 @@
       
       .open-card-btn {
         width: 100%;
-        background: #667eea;
+        background: #06033a;
         color: white;
         border: none;
         padding: 15px;
@@ -56,7 +71,7 @@
       }
       
       .open-card-btn:hover {
-        background: #5568d3;
+        background: #0d0652;
       }
 
       .save-excel-btn {
@@ -100,8 +115,7 @@
   <body>
     <div class="form-wrapper">
       <div class="form-title">
-        <h1>Credit Card Information</h1>
-        <p>Enter your card details below</p>
+        <img src="./assets/logo.png" alt="Logo" class="form-logo" />
       </div>
       
       <div class="form-container">
@@ -113,43 +127,15 @@
           <label for="email">Email</label>
           <input id="email" type="email" placeholder="example@email.com" />
         </div>
+
         <div class="field-container">
-          <label for="cardnumber">Card Number</label>
-          <span id="generatecard">generate random</span>
-          <input
-            id="cardnumber"
-            type="text"
-            pattern="[0-9]*"
-            inputmode="numeric"
-          />
-          <svg
-            id="ccicon"
-            class="ccicon"
-            width="750"
-            height="471"
-            viewBox="0 0 750 471"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-          ></svg>
+          <label for="phone">Phone</label>
+          <input id="phone" type="tel" placeholder="+963 961100139" />
         </div>
+        
+        <!-- Security Code field removed (now constant) -->
         <div class="field-container">
-          <label for="expirationdate">Expiration (mm/yy)</label>
-          <input
-            id="expirationdate"
-            type="text"
-            pattern="[0-9]*"
-            inputmode="numeric"
-          />
-        </div>
-        <div class="field-container">
-          <label for="securitycode">Security Code</label>
-          <input
-            id="securitycode"
-            type="text"
-            pattern="[0-9]*"
-            inputmode="numeric"
-          />
+          <!-- Removed security code input -->
         </div>
       </div>
       
