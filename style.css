@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #06033a;
+    background-image: linear-gradient(45deg, white, 20%, transparent);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -70,7 +70,14 @@ body {
     padding: 20px;
     color: #00e06a;
 }
-
+.creditcard .front {
+    background-image: url('assets/cardFront.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    will-change: transform;
+    border-radius: 40px;
+}
 label {
     padding-bottom: 5px;
     font-size: 13px;
@@ -103,10 +110,11 @@ input {
 
 .container {
     width: 100%;
-    max-width: 400px;
-    max-height: 251px;
+    max-width: 1000px;
+    max-height: 750px;
     height: 54vw;
     padding: 20px;
+
 }
 
 #ccsingle {
@@ -142,9 +150,9 @@ input {
 .creditcard svg#cardfront,
 .creditcard svg#cardback {
     width: 100%;
-    -webkit-box-shadow: 1px 5px 6px 0px black;
-    box-shadow: 1px 5px 6px 0px black;
-    border-radius: 22px;
+    /* -webkit-box-shadow: 1px 5px 6px 0px black; */
+    /* box-shadow: 1px 5px 6px 0px black; */
+    border-radius: 22px 22px 0 0;
 }
 
 #generatecard{
@@ -388,31 +396,29 @@ input {
 
 .creditcard {
     width: 100%;
-    max-width: 400px;
+    max-width: 1200px;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
     transition: -webkit-transform 0.6s;
     -webkit-transition: -webkit-transform 0.6s;
-    transition: transform 0.6s;
-    transition: transform 0.6s, -webkit-transform 0.6s;
     cursor: pointer;
     animation: float 6s ease-in-out infinite;
 }
 
 /* Floating animation */
-@keyframes float {
+/* @keyframes float {
     0%, 100% {
         transform: translateY(0px) rotateY(0deg);
     }
     50% {
         transform: translateY(-20px) rotateY(0deg);
     }
-}
+} */
 
 /* Hover effect */
 .creditcard:hover {
     animation: float 6s ease-in-out infinite, glow 1.5s ease-in-out infinite;
-    filter: drop-shadow(0 0 20px rgba(3, 169, 244, 0.5));
+    /* filter: drop-shadow(0 0 20px rgba(3, 169, 244, 0.5)); */
 }
 
 @keyframes glow {
@@ -428,7 +434,7 @@ input {
 .creditcard .back {
     position: absolute;
     width: 100%;
-    max-width: 400px;
+    max-width: 1000px;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-font-smoothing: antialiased;
