@@ -6,6 +6,12 @@
     <title>Credit Card Form</title>
     <link rel="stylesheet" href="style.css" />
     <style>
+     @font-face {
+       font-family: 'CustomFont';
+       src: url('./assets/fonts/fonnts.com-Address_Sans_Pro_Xt_Bold.otf') format('otf'),
+            url('./assets/fonts/fonnts.com-Address_Sans_Pro_Xt_Bold.otf') format('otf');
+     }
+
       body {
         display: flex;
         flex-direction: column;
@@ -13,6 +19,7 @@
         justify-content: center;
         min-height: 100vh;
         background: linear-gradient(70deg, #FFFFFF 0%, #22b072 75%);
+        font-family: 'CustomFont', sans-serif;
       }
       
       /* Logo in the form header */
@@ -58,7 +65,7 @@
       
       .open-card-btn {
         width: 100%;
-        background: #fff;
+        background: #06033a;
         color: white;
         border: none;
         padding: 15px;
@@ -71,7 +78,7 @@
       }
       
       .open-card-btn:hover {
-        background: #fff;
+        background: #06033a;
       }
 
       .save-excel-btn {

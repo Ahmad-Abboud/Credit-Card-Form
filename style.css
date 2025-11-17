@@ -290,7 +290,7 @@ input {
 }
 
 #cardfront .st3 {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'CustomFont', sans-serif;
     font-weight: 600;
 }
 
@@ -299,8 +299,7 @@ input {
 }
 
 #cardfront .st5 {
-    font-family: 'Source Code Pro', monospace;
-    font-weight: 400;
+font-family: 'CustomFont', sans-serif;
 }
 
 #cardfront .st6 {
@@ -321,8 +320,7 @@ input {
 }
 
 #cardfront .st10 {
-    font-family: 'Source Code Pro', monospace;
-    font-weight: 300;
+font-family: 'CustomFont', sans-serif;    font-weight: 300;
 }
 
 #cardfront .st11 {
@@ -357,8 +355,7 @@ input {
 }
 
 #cardback .st6 {
-    font-family: 'Source Code Pro', monospace;
-    font-weight: 400;
+font-family: 'CustomFont', sans-serif;    
 }
 
 #cardback .st7 {
