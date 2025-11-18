@@ -1,166 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Credit Card Form</title>
-    <link rel="stylesheet" href="style.css" />
-    <style>
-     @font-face {
-       font-family: 'CustomFont';
-       src: url('./assets/fonts/fonnts.com-Address_Sans_Pro_Xt_Bold.otf') format('otf'),
-            url('./assets/fonts/fonnts.com-Address_Sans_Pro_Xt_Bold.otf') format('otf');
-     }
 
-      body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        background: linear-gradient(70deg, #FFFFFF 0%, #22b072 75%);
-        font-family: 'CustomFont', sans-serif;
-      }
-      
-      /* Logo in the form header */
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Credit Card Form</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    @font-face {
+      font-family: 'CustomFont';
+      src: url('./assets/fonts/fonnts.com-Address_Sans_Pro_Xt_Bold.otf') format('otf'),
+        url('./assets/fonts/fonnts.com-Address_Sans_Pro_Xt_Bold.otf') format('otf');
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(70deg, #FFFFFF 0%, #22b072 75%);
+      font-family: 'CustomFont', sans-serif;
+    }
+
+    /* Logo in the form header */
+    .form-logo {
+      display: block;
+      margin: 0 auto 12px auto;
+      max-width: 220px;
+      /* increased size */
+      height: auto;
+    }
+
+    /* Keep the logo responsive on small screens */
+    @media (max-width: 480px) {
       .form-logo {
-        display: block;
-        margin: 0 auto 12px auto;
-        max-width: 220px; /* increased size */
-        height: auto;
+        max-width: 140px;
       }
-      
-      /* Keep the logo responsive on small screens */
-      @media (max-width: 480px) {
-        .form-logo {
-          max-width: 140px;
-        }
-      }
-      
-      .form-wrapper {
-        background: white;
-        border-radius: 15px;
-        padding: 30px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        max-width: 500px;
-        width: 100%;
-      }
-      
-      .form-title {
-        text-align: center;
-        color: #333;
-        margin-bottom: 30px;
-      }
-      
-      .form-title h1 {
-        margin: 0;
-        font-size: 28px;
-      }
-      
-      .form-title p {
-        margin: 10px 0 0 0;
-        color: #666;
-        font-size: 14px;
-      }
-      
-      .open-card-btn {
-        width: 100%;
-        background: #06033a;
-        color: white;
-        border: none;
-        padding: 15px;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        margin-top: 20px;
-        transition: background 0.3s;
-      }
-      
-      .open-card-btn:hover {
-        background: #06033a;
-      }
+    }
 
-      .save-excel-btn {
-        width: 100%;
-        background: #10b981;
-        color: white;
-        border: none;
-        padding: 15px;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        margin-top: 10px;
-        transition: background 0.3s;
-      }
+    .form-wrapper {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      width: 100%;
+    }
 
-      .save-excel-btn:hover {
-        background: #059669;
-      }
+    .form-title {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
 
-      .status-indicator {
-        text-align: center;
-        margin-top: 15px;
-        padding: 10px;
-        border-radius: 5px;
-        font-size: 14px;
-      }
-      
-      .status-indicator.connected {
-        background: #d4edda;
-        color: #155724;
-      }
-      
-      .status-indicator.disconnected {
-        background: #f8d7da;
-        color: #721c24;
-      }
-    </style>
-  </head>
+    .form-title h1 {
+      margin: 0;
+      font-size: 28px;
+    }
 
-  <body>
-    <div class="form-wrapper">
-      <div class="form-title">
-        <img src="./assets/logo.png" alt="Logo" class="form-logo" />
+    .form-title p {
+      margin: 10px 0 0 0;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .open-card-btn {
+      width: 100%;
+      background: #06033a;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+
+    .open-card-btn:hover {
+      background: #06033a;
+    }
+
+    .save-excel-btn {
+      width: 100%;
+      background: #10b981;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    .save-excel-btn:hover {
+      background: #059669;
+    }
+
+    .status-indicator {
+      text-align: center;
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .status-indicator.connected {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .status-indicator.disconnected {
+      background: #f8d7da;
+      color: #721c24;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-wrapper">
+    <div class="form-title">
+      <img src="./assets/logo.png" alt="Logo" class="form-logo" />
+    </div>
+
+    <div class="form-container">
+      <div class="field-container">
+        <label for="name">Name</label>
+        <input id="name" maxlength="25" type="text" />
       </div>
-      
-      <div class="form-container">
-        <div class="field-container">
-          <label for="name">Name</label>
-          <input id="name" maxlength="25" type="text" />
-        </div>
-        <div class="field-container">
-          <label for="email">Email</label>
-          <input id="email" type="email" placeholder="example@email.com" />
-        </div>
-
-        <div class="field-container">
-          <label for="phone">Phone</label>
-          <input id="phone" type="tel" placeholder="+963 961100139" />
-        </div>
-        
-        <!-- Security Code field removed (now constant) -->
-        <div class="field-container">
-          <!-- Removed security code input -->
-        </div>
+      <div class="field-container">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="example@email.com" />
       </div>
-      
-      <button class="open-card-btn" id="openCardBtn">
-        Open Card View
-      </button>
 
-      <button class="save-excel-btn" id="saveExcelBtn">
-        Save to Excel
-      </button>
-
-      <div class="status-indicator disconnected" id="statusIndicator">
-        Card view not open
+      <div class="field-container">
+        <label for="phone">Phone</label>
+        <input id="phone" type="tel" placeholder="+963 961100139" />
+      </div>
+      <div class="field-container">
+        <label>Select Card Style</label>
+        <select id="cardStyle">
+          <option value="default">Default (Green)</option>
+          <option value="girl">Girl Card</option>
+          <option value="red">Red Card</option>
+        </select>
+      </div>
+      <!-- Security Code field removed (now constant) -->
+      <div class="field-container">
+        <!-- Removed security code input -->
       </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
-    <script src="./form.js"></script>
-  </body>
-</html>
+    <button class="open-card-btn" id="openCardBtn">
+      Open Card View
+    </button>
 
+    <button class="save-excel-btn" id="saveExcelBtn">
+      Save to Excel
+    </button>
+
+    <div class="status-indicator disconnected" id="statusIndicator">
+      Card view not open
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
+  <script src="./form.js"></script>
+</body>
+
+</html>

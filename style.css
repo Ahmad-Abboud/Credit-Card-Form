@@ -1,406 +1,416 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-image: linear-gradient(45deg, #072621, 50%, #1e4e44);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    min-height: 100vh;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    font-family: 'Raleway';
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(45deg, #072621, 50%, #1e4e44);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 100vh;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-family: "Raleway";
 }
 
 .payment-title {
-    width: 100%;
-    text-align: center;
-    color: #00e06a;
+  width: 100%;
+  text-align: center;
+  color: #00e06a;
 }
 
 .payment-title img {
-    max-width: 150px;
-    height: auto;
-    margin-bottom: 10px;
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 10px;
 }
 
 .form-container .field-container:first-of-type {
-    grid-area: name;
+  grid-area: name;
 }
 
 .form-container .field-container:nth-of-type(2) {
-    grid-area: email;
+  grid-area: email;
 }
 
 .form-container .field-container:nth-of-type(3) {
-    grid-area: number;
+  grid-area: number;
 }
 
 .form-container .field-container:nth-of-type(4) {
-    grid-area: expiration;
+  grid-area: expiration;
 }
 
 .form-container .field-container:nth-of-type(5) {
-    grid-area: security;
+  grid-area: security;
 }
 
 .field-container input {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .field-container {
-    position: relative;
+  position: relative;
 }
 
 .form-container {
-    display: grid;
-    grid-column-gap: 10px;
-    grid-template-columns: auto auto;
-    grid-template-rows: 90px 90px 90px 90px;
-    grid-template-areas: "name name""email email""number number""expiration security";
-    max-width: 400px;
-    padding: 20px;
-    color: #00e06a;
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns: auto auto;
+  grid-template-rows: 90px 90px 90px 90px;
+  grid-template-areas: "name name" "email email" "number number" "expiration security";
+  max-width: 400px;
+  padding: 20px;
+  color: #00e06a;
 }
 .creditcard .front {
-    background-image: url('assets/cardFront.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    will-change: transform;
-    border-radius: 40px;
-    box-shadow: 0 0px 15px #097e6b;
+  background-image: url("assets/cardFront.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: transform;
+  border-radius: 40px;
+  box-shadow: 0 0px 15px #097e6b;
 }
 label {
-    padding-bottom: 5px;
-    font-size: 13px;
+  padding-bottom: 5px;
+  font-size: 13px;
 }
 
 input {
-    margin-top: 3px;
-    padding: 15px;
-    font-size: 16px;
-    width: 100%;
-    border-radius: 3px;
-    border: 1px solid #22b273;
+  margin-top: 3px;
+  padding: 15px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #22b273;
 }
 
 .ccicon {
-    height: 38px;
-    position: absolute;
-    right: 6px;
-    top: calc(50% - 17px);
-    width: 60px;
+  height: 38px;
+  position: absolute;
+  right: 6px;
+  top: calc(50% - 17px);
+  width: 60px;
 }
 
 /* CREDIT CARD IMAGE STYLING */
 .preload * {
-    -webkit-transition: none !important;
-    -moz-transition: none !important;
-    -ms-transition: none !important;
-    -o-transition: none !important;
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
 }
 
 .container {
-    width: 100%;
-    max-width: 1000px;
-    max-height: 640px;
-    height: 54vw;
-    padding: 20px;
-
+  width: 100%;
+  max-width: 1000px;
+  max-height: 640px;
+  height: 54vw;
+  padding: 20px;
 }
 
 #ccsingle {
-    position: absolute;
-    right: 15px;
-    top: 20px;
-    transition: all 0.4s ease;
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  transition: all 0.4s ease;
 }
 
 #ccsingle svg {
-    animation: cardIconPop 0.6s ease;
+  animation: cardIconPop 0.6s ease;
 }
 
 @keyframes cardIconPop {
-    0% {
-        transform: scale(0) rotate(-180deg);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.2) rotate(10deg);
-    }
-    100% {
-        transform: scale(1) rotate(0deg);
-        opacity: 1;
-    }
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
 }
 
 #ccsingle svg {
-    width: 100px;
-    max-height: 60px;
+  width: 100px;
+  max-height: 60px;
 }
 
 .creditcard svg#cardfront,
 .creditcard svg#cardback {
-    width: 100%;
-    /* -webkit-box-shadow: 1px 5px 6px 0px black; */
-    /* box-shadow: 1px 5px 6px 0px black; */
-    border-radius: 22px 22px 0 0;
+  width: 100%;
+  /* -webkit-box-shadow: 1px 5px 6px 0px black; */
+  /* box-shadow: 1px 5px 6px 0px black; */
+  border-radius: 22px 22px 0 0;
 }
 
-#generatecard{
-    cursor: pointer;
-    float: right;
-    font-size: 12px;
-    color: #fff;
-    padding: 2px 4px;
-    background-color: #909090;
-    border-radius: 4px;
-    cursor: pointer;
-    float:right;
+#generatecard {
+  cursor: pointer;
+  float: right;
+  font-size: 12px;
+  color: #fff;
+  padding: 2px 4px;
+  background-color: #909090;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
 }
 
 /* CHANGEABLE CARD ELEMENTS */
 .creditcard .lightcolor,
 .creditcard .darkcolor {
-    -webkit-transition: fill .5s;
-    transition: fill .5s;
+  -webkit-transition: fill 0.5s;
+  transition: fill 0.5s;
 }
 
 /* Card chip shimmer effect */
 #cchip {
-    animation: shimmer 3s ease-in-out infinite;
+  animation: shimmer 3s ease-in-out infinite;
 }
 
 @keyframes shimmer {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.8;
-    }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
 
 /* Card text pulse on update */
-#svgnumber, #svgname, #svgexpire, #svgsecurity, #svgnameback {
-    transition: all 0.3s ease;
+#svgnumber,
+#svgname,
+#svgexpire,
+#svgsecurity,
+#svgnameback {
+  transition: all 0.3s ease;
 }
 
-#svgnumber.updated, #svgname.updated, #svgexpire.updated, #svgsecurity.updated, #svgnameback.updated {
-    animation: pulse 0.5s ease;
+#svgnumber.updated,
+#svgname.updated,
+#svgexpire.updated,
+#svgsecurity.updated,
+#svgnameback.updated {
+  animation: pulse 0.5s ease;
 }
 
 @keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 0.8;
-    }
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
 }
 
 .creditcard .lightblue {
-    fill: #03A9F4;
+  fill: #03a9f4;
 }
 
 .creditcard .lightbluedark {
-    fill: #0288D1;
+  fill: #0288d1;
 }
 
 .creditcard .red {
-    fill: #ef5350;
+  fill: #ef5350;
 }
 
 .creditcard .reddark {
-    fill: #d32f2f;
+  fill: #d32f2f;
 }
 
 .creditcard .purple {
-    fill: #ab47bc;
+  fill: #ab47bc;
 }
 
 .creditcard .purpledark {
-    fill: #7b1fa2;
+  fill: #7b1fa2;
 }
 
 .creditcard .cyan {
-    fill: #26c6da;
+  fill: #26c6da;
 }
 
 .creditcard .cyandark {
-    fill: #0097a7;
+  fill: #0097a7;
 }
 
 .creditcard .green {
-    fill: #66bb6a;
+  fill: #66bb6a;
 }
 
 .creditcard .greendark {
-    fill: #388e3c;
+  fill: #388e3c;
 }
 
 .creditcard .lime {
-    fill: #d4e157;
+  fill: #d4e157;
 }
 
 .creditcard .limedark {
-    fill: #afb42b;
+  fill: #afb42b;
 }
 
 .creditcard .yellow {
-    fill: #ffeb3b;
+  fill: #ffeb3b;
 }
 
 .creditcard .yellowdark {
-    fill: #f9a825;
+  fill: #f9a825;
 }
 
 .creditcard .orange {
-    fill: #ff9800;
+  fill: #ff9800;
 }
 
 .creditcard .orangedark {
-    fill: #ef6c00;
+  fill: #ef6c00;
 }
 
 .creditcard .grey {
-    fill: #bdbdbd;
+  fill: #bdbdbd;
 }
 
 .creditcard .greydark {
-    fill: #616161;
+  fill: #616161;
 }
 
 /* FRONT OF CARD */
 #svgname {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 #cardfront .st2 {
-    fill: #FFFFFF;
+  fill: #ffffff;
 }
 
 #cardfront .st3 {
-    font-family: 'CustomFont', sans-serif;
-    font-weight: 600;
+  font-family: "CustomFont", sans-serif;
+  font-weight: 600;
 }
 
 #cardfront .st4 {
-    font-size: 54.7817px;
+  font-size: 54.7817px;
 }
 
 #cardfront .st5 {
-font-family: 'CustomFont', sans-serif;
+  font-family: "CustomFont", sans-serif;
 }
 
 #cardfront .st6 {
-    font-size: 33.1112px;
+  font-size: 33.1112px;
 }
 
 #cardfront .st7 {
-    opacity: 0.6;
-    fill: #FFFFFF;
+  opacity: 0.6;
+  fill: #ffffff;
 }
 
 #cardfront .st8 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 #cardfront .st9 {
-    font-size: 36.5498px;
+  font-size: 36.5498px;
 }
 
 #cardfront .st10 {
-font-family: 'CustomFont', sans-serif;    font-weight: 300;
+  font-family: "CustomFont", sans-serif;
+  font-weight: 300;
 }
 
 #cardfront .st11 {
-    font-size: 16.1716px;
+  font-size: 16.1716px;
 }
 
 #cardfront .st12 {
-    fill: #4C4C4C;
+  fill: #4c4c4c;
 }
 
 /* BACK OF CARD */
 #cardback .st0 {
-    fill: none;
-    stroke: #0F0F0F;
-    stroke-miterlimit: 10;
+  fill: none;
+  stroke: #0f0f0f;
+  stroke-miterlimit: 10;
 }
 
 #cardback .st2 {
-    fill: #111111;
+  fill: #111111;
 }
 
 #cardback .st3 {
-    fill: #F2F2F2;
+  fill: #f2f2f2;
 }
 
 #cardback .st4 {
-    fill: #D8D2DB;
+  fill: #d8d2db;
 }
 
 #cardback .st5 {
-    fill: #C4C4C4;
+  fill: #c4c4c4;
 }
 
 #cardback .st6 {
-font-family: 'CustomFont', sans-serif;    
+  font-family: "CustomFont", sans-serif;
 }
 
 #cardback .st7 {
-    font-size: 27px;
+  font-size: 27px;
 }
 
 #cardback .st8 {
-    opacity: 0.6;
+  opacity: 0.6;
 }
 
 #cardback .st9 {
-    fill: #FFFFFF;
+  fill: #ffffff;
 }
 
 #cardback .st10 {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 #cardback .st11 {
-    fill: #EAEAEA;
+  fill: #eaeaea;
 }
 
 #cardback .st12 {
-    font-family: 'Rock Salt', cursive;
+  font-family: "Rock Salt", cursive;
 }
 
 #cardback .st13 {
-    font-size: 37.769px;
+  font-size: 37.769px;
 }
 
 /* FLIP ANIMATION */
 .container {
-    perspective: 1000px;
+  perspective: 1000px;
 }
 
 .creditcard {
-    width: 100%;
-    max-width: 1200px;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    transition: -webkit-transform 0.6s;
-    -webkit-transition: -webkit-transform 0.6s;
-    cursor: pointer;
-    animation: float 6s ease-in-out infinite;
+  width: 100%;
+  max-width: 1200px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: -webkit-transform 0.6s;
+  -webkit-transition: -webkit-transform 0.6s;
+  cursor: pointer;
+  animation: float 6s ease-in-out infinite;
 }
 
 /* Floating animation */
@@ -415,57 +425,61 @@ font-family: 'CustomFont', sans-serif;
 
 /* Hover effect */
 .creditcard:hover {
-    /* animation: float 6s ease-in-out infinite, glow 1.5s ease-in-out infinite; */
-    /* filter: drop-shadow(0 0 20px rgba(3, 169, 244, 0.5)); */
+  /* animation: float 6s ease-in-out infinite, glow 1.5s ease-in-out infinite; */
+  /* filter: drop-shadow(0 0 20px rgba(3, 169, 244, 0.5)); */
 }
 
 @keyframes glow {
-    0%, 100% {
-        filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
-    }
-    50% {
-        filter: drop-shadow(0 5px 25px rgba(3, 169, 244, 0.6));
-    }
+  0%,
+  100% {
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 5px 25px rgba(3, 169, 244, 0.6));
+  }
 }
 
 .creditcard .front,
 .creditcard .back {
-    position: absolute;
-    width: 100%;
-    max-width: 1000px;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -webkit-font-smoothing: antialiased;
-    color: #47525d;
+  position: absolute;
+  width: 100%;
+  max-width: 1000px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  color: #47525d;
 }
 
 .creditcard .back {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .creditcard.flipped {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-    animation: floatFlipped 6s ease-in-out infinite;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  animation: floatFlipped 6s ease-in-out infinite;
 }
 
 /* Floating animation for flipped state */
 @keyframes floatFlipped {
-    0%, 100% {
-        transform: translateY(0px) rotateY(180deg);
-    }
-    50% {
-        transform: translateY(-20px) rotateY(180deg);
-    }
+  0%,
+  100% {
+    transform: translateY(0px) rotateY(180deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateY(180deg);
+  }
 }
 
 /* Loader styling */
 #loader {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: #f9f9f9;
   display: flex;
   align-items: center;
@@ -487,22 +501,31 @@ font-family: 'CustomFont', sans-serif;
 }
 
 #loader p {
-  font-family: 'Raleway';
+  font-family: "Raleway";
   color: #555;
   font-size: 18px;
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes fadeOut {
-  to { opacity: 0; visibility: hidden; }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 /* Smooth fade-in for main container */
-.container, .form-container, .button-container {
+.container,
+.form-container,
+.button-container {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;

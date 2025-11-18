@@ -1,23 +1,23 @@
 // Create a BroadcastChannel for real-time communication with the form
-const cardChannel = new BroadcastChannel('credit_card_channel');
+const cardChannel = new BroadcastChannel("credit_card_channel");
 
 window.onload = function () {
   // Remove preload class and make card visible
-  const container = document.querySelector('.container');
+  const container = document.querySelector(".container");
   if (container) {
-    container.classList.remove('preload');
+    container.classList.remove("preload");
   }
 
   // Add loaded class to body for fade-in animation
-  setTimeout(function() {
-    document.body.classList.add('loaded');
+  setTimeout(function () {
+    document.body.classList.add("loaded");
   }, 100);
 
   // Hide loader after a short delay
-  const loader = document.getElementById('loader');
+  const loader = document.getElementById("loader");
   if (loader) {
-    setTimeout(function() {
-      loader.style.display = 'none';
+    setTimeout(function () {
+      loader.style.display = "none";
     }, 500);
   }
 
@@ -38,76 +38,105 @@ window.onload = function () {
   let diners_single = diners;
 
   // Get SVG elements
-  const svgname = document.getElementById('svgname');
-  const svgnameback = document.getElementById('svgnameback');
-  const svgnumber = document.getElementById('svgnumber');
-  const svgexpire = document.getElementById('svgexpire');
-  const svgsecurity = document.getElementById('svgsecurity');
-  const ccsingle = document.getElementById('ccsingle');
+  const svgname = document.getElementById("svgname");
+  const svgnameback = document.getElementById("svgnameback");
+  const svgnumber = document.getElementById("svgnumber");
+  const svgexpire = document.getElementById("svgexpire");
+  const svgsecurity = document.getElementById("svgsecurity");
+  const ccsingle = document.getElementById("ccsingle");
 
   // Function to swap card colors based on card type
   function swapColor(basecolor) {
-    document.querySelectorAll('.lightcolor').forEach(function(el) {
-      el.setAttribute('class', '');
-      el.setAttribute('class', 'lightcolor ' + basecolor);
+    document.querySelectorAll(".lightcolor").forEach(function (el) {
+      el.setAttribute("class", "");
+      el.setAttribute("class", "lightcolor " + basecolor);
     });
-    document.querySelectorAll('.darkcolor').forEach(function(el) {
-      el.setAttribute('class', '');
-      el.setAttribute('class', 'darkcolor ' + basecolor + 'dark');
+    document.querySelectorAll(".darkcolor").forEach(function (el) {
+      el.setAttribute("class", "");
+      el.setAttribute("class", "darkcolor " + basecolor + "dark");
     });
   }
 
   // Helper function to add pulse animation
   function addPulseAnimation(element) {
-    element.classList.add('updated');
-    setTimeout(function() {
-      element.classList.remove('updated');
+    element.classList.add("updated");
+    setTimeout(function () {
+      element.classList.remove("updated");
     }, 500);
   }
 
   // Listen for messages from the form
-  cardChannel.addEventListener('message', function(event) {
+  cardChannel.addEventListener("message", function (event) {
     const data = event.data;
+    if (data.type === "card_style") {
+      const frontCard = document.querySelector(".creditcard .front");
 
-    if (data.type === 'name') {
+      if (data.value === "girl") {
+        frontCard.style.backgroundImage = 'url("assets/Card 4.1.webp")';
+        frontCard.style.boxShadow = "none";
+
+        document.body.style.backgroundColor = "white";
+        document.body.style.backgroundImage = "none";
+      } else if (data.value === "red") {
+        // Reset girl style first
+        document.body.style.backgroundColor = "";
+        document.body.style.backgroundImage = "";
+        frontCard.style.boxShadow = "";
+
+        // Apply red card
+        frontCard.style.backgroundImage = 'url("assets/Card 5.1.webp")';
+      } else {
+        // FULL RESET to CSS defaults
+        frontCard.style.backgroundImage = "";
+        frontCard.style.boxShadow = "";
+
+        document.body.style.backgroundColor = "";
+        document.body.style.backgroundImage = "";
+
+        // Allow CSS to control the default background
+      }
+    }
+
+    // Notify
+    if (data.type === "name") {
       svgname.innerHTML = data.value;
       svgnameback.innerHTML = data.value;
       addPulseAnimation(svgname);
       addPulseAnimation(svgnameback);
-    } else if (data.type === 'cardnumber') {
+    } else if (data.type === "cardnumber") {
       svgnumber.innerHTML = data.value;
       addPulseAnimation(svgnumber);
 
       // Update card type and colors
       const cardtype = data.cardtype;
-      if (cardtype === 'american express') {
+      if (cardtype === "american express") {
         ccsingle.innerHTML = amex_single;
-        swapColor('amex');
-      } else if (cardtype === 'visa') {
+        swapColor("amex");
+      } else if (cardtype === "visa") {
         ccsingle.innerHTML = visa_single;
-        swapColor('visa');
-      } else if (cardtype === 'mastercard') {
+        swapColor("visa");
+      } else if (cardtype === "mastercard") {
         ccsingle.innerHTML = mastercard_single;
-        swapColor('mastercard');
-      } else if (cardtype === 'discover') {
+        swapColor("mastercard");
+      } else if (cardtype === "discover") {
         ccsingle.innerHTML = discover_single;
-        swapColor('discover');
-      } else if (cardtype === 'diners') {
+        swapColor("discover");
+      } else if (cardtype === "diners") {
         ccsingle.innerHTML = diners_single;
-        swapColor('diners');
+        swapColor("diners");
       } else {
-        ccsingle.innerHTML = '';
-        swapColor('grey');
+        ccsingle.innerHTML = "";
+        swapColor("grey");
       }
-    } else if (data.type === 'expiration') {
+    } else if (data.type === "expiration") {
       svgexpire.innerHTML = data.value;
       addPulseAnimation(svgexpire);
-    } else if (data.type === 'security') {
+    } else if (data.type === "security") {
       svgsecurity.innerHTML = data.value;
       addPulseAnimation(svgsecurity);
     }
   });
 
   // Notify form that card view is ready
-  cardChannel.postMessage({ type: 'card_ready' });
+  cardChannel.postMessage({ type: "card_ready" });
 };
