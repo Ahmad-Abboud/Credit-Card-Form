@@ -77,7 +77,7 @@ body {
     background-repeat: no-repeat;
     will-change: transform;
     border-radius: 40px;
-    box-shadow: 0 5px 8px #097e6b;
+    box-shadow: 0 0px 15px #097e6b;
 }
 label {
     padding-bottom: 5px;
@@ -112,7 +112,7 @@ input {
 .container {
     width: 100%;
     max-width: 1000px;
-    max-height: 750px;
+    max-height: 640px;
     height: 54vw;
     padding: 20px;
 
@@ -415,7 +415,7 @@ font-family: 'CustomFont', sans-serif;
 
 /* Hover effect */
 .creditcard:hover {
-    animation: float 6s ease-in-out infinite, glow 1.5s ease-in-out infinite;
+    /* animation: float 6s ease-in-out infinite, glow 1.5s ease-in-out infinite; */
     /* filter: drop-shadow(0 0 20px rgba(3, 169, 244, 0.5)); */
 }
 
