@@ -71,19 +71,19 @@ window.onload = function () {
     if (data.type === "card_style") {
       const frontCard = document.querySelector(".creditcard .front");
 
-      if (data.value === "girl") {
+      if (data.value === "Green") {
         frontCard.style.backgroundImage = 'url("assets/Card 4.1.webp")';
         frontCard.style.boxShadow = "none";
 
         document.body.style.backgroundColor = "white";
         document.body.style.backgroundImage = "none";
-      } else if (data.value === "red") {
-        // Reset girl style first
-        document.body.style.backgroundColor = "";
-        document.body.style.backgroundImage = "";
-        frontCard.style.boxShadow = "";
+      } else if (data.value === "Blue") {
+        // Reset Green style first
+        document.body.style.backgroundColor = "white";
+        document.body.style.backgroundImage = "none";
+        frontCard.style.boxShadow = "none";
 
-        // Apply red card
+        // Apply blue card
         frontCard.style.backgroundImage = 'url("assets/Card 5.1.webp")';
       } else {
         // FULL RESET to CSS defaults
