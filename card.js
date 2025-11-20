@@ -75,12 +75,14 @@ window.onload = function () {
         frontCard.style.backgroundImage = 'url("assets/Card 4.1.webp")';
         frontCard.style.boxShadow = "none";
 
-        document.body.style.backgroundColor = "white";
-        document.body.style.backgroundImage = "none";
+        document.body.style.backgroundColor = "";
+        document.body.style.backgroundImage =
+          "linear-gradient(43deg, #072621, 40%, #1e6b46)";
       } else if (data.value === "Blue") {
         // Reset Green style first
-        document.body.style.backgroundColor = "white";
-        document.body.style.backgroundImage = "none";
+        document.body.style.backgroundColor = "";
+        document.body.style.backgroundImage =
+          "linear-gradient(45deg, #02486d, 66%, #000000)";
         frontCard.style.boxShadow = "none";
 
         // Apply blue card
